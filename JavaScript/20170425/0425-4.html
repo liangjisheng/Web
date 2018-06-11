@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// with 语句用于设置代码在特定对象终点作用域
+// with 语句是运行缓慢的代码块，尤其是在已设置了属性值时。
+// 大多数情况下，如果可能，最好避免使用它。
+var sMsg = "hello";
+with(sMsg)
+{
+//	alert(toUpperCase());
+}
+
+
+// ECMAScript中的switch可以用于字符串
+var BLUE = "blue", RED = "red", GREEN = "green";
+var sColor = "blue";
+switch(sColor)
+{
+	case BLUE:
+		alert("Blue");
+		break;
+	case RED:
+		alert("Red");
+		break;
+	case GREEN:
+		alert("Green");
+		break;
+	default:
+		alert("Other");
+}
+
+</script>
+
+</body>
+</html>

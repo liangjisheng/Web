@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 对象冒充 实现类的继承
+//function ClassA(sColor)
+//{
+	//this.color = sColor;
+	//this.sayColor = function() { alter(this.color); };
+//}
+
+// 这个原理是把ClassA作为常规函数来简历继承机制，而不是作为构造函数
+//function ClassB(sColor, sName)
+//{
+	// ClassA赋予了方法newMethod，然后调用该方法，
+	//this.newMethod = ClassA;
+	//this.newMethod(sColor);
+	// 删除了对ClassA的引用，这样就不能再调用它,只能调用一次
+	//delete this.newMethod;
+	
+	//this.name = sName;
+	//this.sayName = function() { alert(this.sName); };
+//}
+
+//var objA = new ClassA("blue");
+//var objB = new ClassB("red", "John");
+//objA.sayColor();
+//objB.sayColor();
+//objB.sayName();
+
+
+function sayColor(sPrefix, sSuffix) { alert(sPrefix + this.color + sSuffix); };
+
+var obj = new Object;
+obj.color = "blue";
+sayColor.call(obj, "The color is ", ", a very nice color indeed.");
+
+</script>
+
+</body>
+</html>

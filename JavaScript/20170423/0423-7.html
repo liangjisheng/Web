@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		
+		<h1>My First Web Page</h1>		
+		<script>
+		// document.write()仅仅想文档输出写内容
+		document.write("<p>My First JavaScript</p>");
+		</script>
+		
+		<h1>My First Web Page</h1>
+		<p>My First Paragraph.</p>
+		<button onclick = "myFunction()">click here</button>
+		<script>
+		function myFunction()
+		{
+			// 如果在文档已完成加载后执行write，整个HTML页面将被覆盖
+			// 添加反斜杠进行代码换行
+			document.write("The document\
+				disappear.");
+		}
+		</script>
+		
+	</body>
+</html>

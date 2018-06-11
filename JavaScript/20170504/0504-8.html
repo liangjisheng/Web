@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// prototype属性不仅可以定义构造函数的属性和方法，还可以为本地对象添加属性和方法
+
+// 创建新的方法
+Number.prototype.toHexString = function()
+{
+	return this.toString(16);
+}
+
+var iNum = 15;
+// alert(iNum.toHexString());		// f
+
+// 添加与已有方法无关的方法
+Array.prototype.indexOf = function(vItem)
+{
+	for(var i = 0; i < this.length; i++)
+	{
+		if(vItem == this[i])
+			return i;
+	}
+	return -1;
+}
+
+var aColors = new Array("red", "green", "blue");
+//alert(aColors.indexOf("green"));				// 1
+
+// 为本地对象添加新方法，如果想给ECMAScript中的每个对象添加新方法，必须在Object
+// 对象的prototype属性上定义它，所有本地对象都继承了Object对象，所以对Object
+// 对象的任何改变，都会反映在所有本地对象上，如下，添加一个用警告输出对象当前值
+// 的方法
+Object.prototype.showValue = function()
+{
+	alert(this.valueOf());
+}
+
+// String和Number对象都从Object对象继承了showValue()方法
+var str = "hello";
+var iNum1 = 25;
+//str.showValue();					// hello
+//iNum1.showValue();					// 25
+
+
+// 极晚绑定，能够在对象实例化后在定义它的方法,
+// 不建议使用极晚绑定，因为很难对其跟踪和记录
+var o = new Object();
+
+Object.prototype.sayHi = function() { alert("hi"); }
+
+o.sayHi();
+
+</script>
+
+</body>
+</html>

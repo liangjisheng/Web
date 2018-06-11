@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		
+	<script>
+	
+	// 当变量未初始化时，该变量的默认值是undidined
+	var sTemp;
+	//alert(typeof sTemp);
+	sTemp = "test string";
+	//alert(typeof sTemp);
+	//alert(typeof 86);
+	//alert(typeof false);
+	//alert(typeof null);
+	
+	// undefined并不同于未定义的值，但是typeof运算符并不真正区分这两种值
+	//alert(typeof tmp);
+	
+	// 函数无明确返回值时，返回的也是undefined
+	function testFunc() {}
+	// alert(testFunc() == undefined);		// true
+	
+	// alert(null == undefined);	// true
+	
+	// 可以用一个方法判断一个数是否是有穷的(而不是单独测试每个无穷数)
+	// 可以对任何数调用isFinite()方法，确保改数不是无穷大
+	var iRet = 132432324 * 98874748457;
+	//if(isFinite(iRet))
+		//alert("finite");
+	//else
+		//alert("infinite");
+		
+	// NaN表示非数(Not a Number).产生NaN一般发生在类型转换失败，与无穷大一样
+	// NaN不能用于算术计算，NaN自身不等于自身
+	//alert(NaN == NaN);		// false
+	//alert(isNaN("blue"));		// true
+	//alert(isNaN("666"));		// false
+	
+	// String 类型可以用双引号，也可以用单引号
+	var sColor1 = "red";
+	var sColor2 = 'red';
+	
+	</script>
+		
+	</body>
+</html>

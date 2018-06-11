@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 在工厂函数外定义对象的方法,通过属性指向该方法
+function showColor()
+{
+	alert(this.color);
+}
+
+function createCar(sColor, iDoors, iMpg)
+{
+	var oCar = new Object;
+	oCar.color = sColor;
+	oCar.doors = iDoors;
+	oCar.mpg = iMpg;
+	// 赋予对象一个只指向已经存在的showColor()函数的指针,
+	// 解决了重复创建函数对象的问题，但从语义上将，该函数不太像是对象的方法
+	oCar.showColor = showColor;
+	
+	return oCar;
+}
+
+var oCar1 = createCar("red", 4, 23);
+var oCar2 = createCar("blue", 3, 25);
+
+//oCar1.showColor();
+//oCar2.showColor();
+
+
+// 构造函数创建对象
+function Car(sColor, iDoors, iMpg)
+{
+	this.color = sColor;
+	this.doors = iDoors;
+	this.mpg = iMpg;
+	// 构造函数会重复生成函数，为每个对象都创建独立的函数版本
+	// 也可以用外部函数重写构造函数，与上面是一样的
+	this.showColor = function() { alert(this.color); }
+}
+
+var oCar3 = Car("red", 4, 23);
+var oCar4 = Car("blue", 3, 25);
+
+</script>
+
+</body>
+</html>

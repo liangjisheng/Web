@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<script>
+</script>
+</head>
+
+<body>
+<script>
+
+// 每当调用函数的时候，一个有魔力的特殊变量arguments就会添加到允许函数体
+// 运行的环境(上下文)中。该变量引用的对象类似于一个数组，属性0对应第一个
+// 函数参数，但是当向argumetns对象添加属性的时候，它不会自动更新length
+// 属性
+function argumentCounter()
+{
+	return "You gave me " + arguments.length + " arguments.";
+}
+
+var len = argumentCounter("one", "two", "three");
+document.write(len + "<br>");
+document.write("<br>");
+
+function add(num, howmuch)
+{
+	if(arguments.length < 2)
+		howmuch = 1;
+	return num + howmuch;
+}
+
+document.write(add(6) + "<br>");
+document.write(add(6, 4) + "<br>");
+document.write("<br>");
+
+
+function range(start, end)
+{
+	if(arguments.length < 2)
+	{
+		end = start;
+		start = 0;
+	}
+	var res = [];
+	for(var i = start; i <= end; i++)
+		res.push(i);
+	return res;
+}
+
+document.write(range(4) + "<br>");
+document.write(range(2, 4) + "<br>");
+
+
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

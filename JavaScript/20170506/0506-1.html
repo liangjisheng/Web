@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<script>
+</script>
+</head>
+
+<body>
+<script>
+
+// 没有return 的函数实际返回的是undefined
+
+function print(txt)
+{
+	document.write(txt + "<br>");
+}
+
+function power(base, exponent)
+{
+	var result = 1;
+	for(var count = 0; count < exponent; count++)
+		result *= base;
+	return result;
+}
+
+// 尽管future()函数在后面声明，但可以在这里调用
+print(future());
+
+function future() { return "We STILL have flying cars."; }
+
+// alert(power(2, 10));
+
+// print("text");
+
+var a = null;
+function b() { return "B"; }
+// 如果a不是false值，程序会调用变量a里的函数，而如果a为false值(如null)
+// 代码则调用b函数
+var res1 = (a || b)();
+// alert(res1);					// B
+// 使用匿名函数
+var res2 = (a || function(){ return "B";} )();
+//alert(res2);					// B
+
+
+// 可以只传一个参数，缺少的第二个参数默认为undefined
+function power1(base, exponent)
+{
+	var res = 1;
+	if(exponent === undefined)
+		exponent = 2;
+	for(var count = 0; count < exponent; count++)
+		res *= base;
+	return res;
+}
+alert(power1(2));
+alert(power1(2, 10));
+
+</script>
+</body>
+
+</html>

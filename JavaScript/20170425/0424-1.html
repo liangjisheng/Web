@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	
+	var o = new Object();
+	
+	// 创建Number对象，所有的特殊值都是Number对象的静态属性。
+	var oNumberObject = new Number(68);
+	// 得到原始值
+	var iNumber = oNumberObject.valueOf();
+	//alert(iNumber);
+	
+	// toFixed()方法返回具有指定位数小数的数字的字符串表示
+	// 用于处理货币的应用程序
+	// alert(oNumberObject.toFixed(2));		// "68.00"
+	
+	// toExponential()返回用科学计数法表示的数字的字符串形式
+	// 参数指定输出小数的位数
+	//alert(oNumberObject.toExponential(1));
+	//alert(oNumberObject.toExponential(2));
+	
+	// toPrecision()根据最有意义的形式来返回数字的预定义形式或指数形式
+	// 参数表示数的数字总数不包括指数
+	//alert(oNumberObject.toPrecision(1));		// 7e+1
+	//alert(oNumberObject.toPrecision(2));		// 68
+	//alert(oNumberObject.toPrecision(3));		// 68.0
+	
+	
+	var oStringObject = new String("hello,world");
+	// valueof(),toString()返回String类型的原始值
+	//alert(oStringObject.valueOf());
+	//alert(oStringObject.toString());
+	
+	//alert(oStringObject.length);		// 11
+	
+	//alert(oStringObject.charAt(0));		// h
+	//alert(oStringObject.charAt(1));		// e
+	
+	// ANIS code
+	//alert(oStringObject.charCodeAt(0));		// 104
+	//alert(oStringObject.charCodeAt(1));		// 101
+	
+	var oStr1 = new String("hello,");
+	var sRet = oStr1.concat("world");
+	//alert(oStr1);				// hello,
+	//alert(sRet);				// hello,world
+	//sRet = oStr1 + "world";
+	//alert(sRet);				// hello,world
+	
+	//alert(oStringObject.indexOf("o"));				// 4
+	//alert(oStringObject.lastIndexOf("o"));			// 7
+	
+	var oStr2 = new String("yellow");
+	//alert(oStr2.localeCompare("brick"));				// 1
+	//alert(oStr2.localeCompare("yellow"));				// 0
+	//alert(oStr2.localeCompare("zoo"));					// -1
+	
+	var oStr3 = new String("brick");
+	var iRet = oStr2.localeCompare(oStr3);
+	//if(iRet < 0)
+	//	alert(oStr2 + " comes before " + oStr3);
+	//else if(iRet > 0)
+	//	alert(oStr2 + " comes after " + oStr3);
+	//else
+	//	alert("The two strigns are equal");
+	
+	//alert(oStringObject.toLocaleUpperCase());
+	//alert(oStringObject.toUpperCase());
+	//alert(oStringObject.toLocaleLowerCase());
+	//alert(oStringObject.toLowerCase());
+	
+	// 变量oStringObject是否为String对象的实例
+	//alert(oStringObject instanceof String);				// true
+	
+</script>
+
+</body>
+</html>

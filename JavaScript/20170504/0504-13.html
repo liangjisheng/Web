@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<body>
+
+
+
+<script>
+
+function changeImage()
+{
+	element = document.getElementById("myimage");
+	if(element.src == "D:\\InstallSoftware\\JPG\\1.jpg")
+		element.src = "D:\\InstallSoftware\\JPG\\0.jpg";
+	else
+		element.src = "D:\\InstallSoftware\\JPG\\1.jpg";
+}
+
+</script>
+
+<img id="myimage" onclick="changeImage()" src = "D:\InstallSoftware\JPG\0.jpg">
+<p>点击切换图像</p>
+
+</body>
+</html>

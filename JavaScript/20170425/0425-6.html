@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// ECMAScript 最易让人误解的一点是，它支持闭包（closure）。
+// 闭包，指的是词法表示包括不被计算的变量的函数，
+// 也就是说，函数可以使用函数之外定义的变量。
+
+// 全局变量是一个简单的闭包实例
+var sMessage = "hello, world";
+
+function sayHelloWorld()
+{alert(sMessage);}
+
+// sayHelloWorld();
+
+// 在上面这段代码中，脚本被载入内存后，并没有为函数 sayHelloWorld()
+// 计算变量 sMessage 的值。该函数捕获 sMessage 的值只是为了以后的使用，
+// 也就是说，解释程序知道在调用该函数时要检查 sMessage 的值。
+// sMessage 将在函数调用 sayHelloWorld() 时（最后一行）被赋值，
+// 显示消息 "hello world"。
+
+// 复杂的闭包实例
+var iBaseNum = 10;
+
+// addNum()包括doAdd()(闭包)，因为他将获得外部函数的参数iNum1,iNum2以及
+// 全局变量iBaseNum的值，addNum()最后一步调用了doAdd()，返回三个值的和
+function addNum(iNum1, iNum2)
+{
+	function doAdd()		// 闭包
+	{ return iNum1 + iNum2 + iBaseNum; }
+	
+	return doAdd();
+}
+
+alert(addNum(1, 4));				// 15
+// 重要的是doAdd()函数根本不接受参数，他使用的值是从执行环境中获取的。
+// 闭包是ECMAScript中非常强大多用的一部分,可用于执行复杂的计算
+// 就像使用任何高级函数一样，使用闭包要小心，因为它们可能会变得非常复杂。
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+function padNumber(num, fillLen)
+{
+	var len = ('' + num).length;
+	alert(len);
+	return (Array( fillLen > len ? (fillLen - len + 1 )|| 0 : 0).join('*') + num);
+}
+
+var a = padNumber(1234, 8);
+
+alert(a);
+
+</script>
+
+</body>
+</html>

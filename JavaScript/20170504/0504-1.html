@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// ECMAScript 只有公用作用域,对 ECMAScript 讨论作用域几乎毫无意义，
+// 因为 ECMAScript 中只存在一种作用域 - 公用作用域。ECMAScript 
+// 中的所有对象的所有属性和方法都是公用的。因此，定义自己的类和对象时，
+// 必须格外小心。记住，所有属性和方法默认都是公用的！
+
+// ECMAScript 没有静态作用域,不过可以给构造函数提供属性和方法，函数是对象
+// 对象可以有属性和方法
+function sayHello()
+{
+	alert("hello");
+}
+
+// alternate()是sayHello()公用作用域中的方法，而不是静态方法
+sayHello.alternate = function() { alert("hi"); }
+
+// sayHello();
+// sayHello.alternate();
+
+
+var oCar = new Object;
+oCar.color = "red";
+// this指向调用该方法的对象
+oCar.showColor = function() { alert(this.color); }
+oCar.showColor1 = function() { alert(oCar.color); }
+
+// oCar.showColor();
+//oCar.showColor1();
+
+
+function showColor(){ alert(this.color); }
+
+var oCar1 = new Object;
+oCar1.color = "red";
+oCar1.showColor = showColor;
+
+var oCar2 = new Object;
+oCar2.color = "blue";
+oCar2.showColor = showColor;
+
+oCar1.showColor();					// red
+oCar2.showColor();					// blue
+
+</script>
+
+</body>
+</html>

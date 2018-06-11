@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<body>
+
+<h1>My Web Page</h1>
+<p id = "demo">A Paragraph.</p>
+<button type = "button" onclick = "myFunc()">点击这里</button>
+
+<script>
+// JavaScript放在底部，可以确保<p>元素创建之后在执行脚本
+function myFunc()
+{
+	document.getElementById("demo").innerHTML = "My First JavaScript Function";
+}
+</script>
+
+</body>
+</html>

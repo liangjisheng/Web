@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<script>
+</script>
+</head>
+
+<body>
+
+<p>点击下面的按钮，将代码块循环5次</p>
+<button onclick = "myFunc()">click here</button>
+<p id = "demo"></p>
+
+<script>
+
+function myFunc()
+{
+	var x = "";
+	for(var i = 0; i < 5; i++)
+		x = x + "The number is " + i + "<br>";
+	document.getElementById("demo").innerHTML = x;
+}
+
+</script>
+
+</body>
+
+</html>

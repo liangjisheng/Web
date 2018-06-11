@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!ECMAScript 一元运算符>
+<html>
+<body>
+
+<script>
+// delete 运算符删除对以前定义的对象属性或方法的引用
+var o = new Object;
+//o.name = "David";
+//alert(o.name);		// David
+// 强制解除对它的引用，将其设置为undefined(即创建的未初始化的变量的值)
+//delete o.name;
+//alert(o.name);		// undefined
+
+// delete 不能删除开发者未定义的属性和方法
+//delete o.toString;					// Error
+
+// 没有返回值的函数真正返回的都是undefinded
+
+var iNum = 10;
+//alert(iNum);
+iNum++;
+++iNum;
+iNum--;
+--iNum;
+
+var iNum1 = 2;
+var iNum2 = 20;
+//alert(--iNum1 + ++iNum2);			// 22
+//alert(iNum1 + iNum2);				// 22
+
+var sNum = "20";
+//alert(typeof sNum);
+// +将字符串转换为数字
+iNum = +sNum;
+//alert(typeof iNum);
+
+iNum = -sNum;
+alert(iNum);				// -20
+alert(typeof iNum);			// number
+
+</script>
+
+
+</body>
+</html>

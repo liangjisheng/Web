@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>My First Web Page</h1>
+<script type = "text/javascript">
+
+var total = 0, count = 1;
+while(count <= 10)
+{
+	total += count;
+	count +=1;
+}
+document.write(total);
+document.write("\r\n");
+
+// 弹出一个窗口
+// alert("good night");
+
+var nummax = Math.max(2, 4);
+document.write(nummax);
+
+document.write("\r\n");
+
+var nummin = Math.min(2, 4);
+document.write(nummin);
+
+// 弹出一个窗口， 单击OK，返回true，单击Cancel,返回false
+//confirm("Shall we, then?");
+
+// prompt函数可以用于询问一个开放式问题，第一个参数是该问题，第二个参数
+// 是用户需要输入文本的开头部分， 可以在对话框窗口里输入一行文本，该
+// 函数会将其返回作为一个字符串。
+// prompt("Tell me everything you know.", "......");
+
+var theNumber = Number(prompt("Pick a number", ""));
+if(!isNaN(theNumber))
+	alert("Your number is the square root of " + (theNumber * theNumber));
+
+<!-- if(theNumber < 10) -->
+	<!-- print("num is less than 10"); -->
+<!-- else if(theNumber > 10) -->
+	<!-- print("num is greater than 10"); -->
+
+if(theNumber < 10)
+	<h2>num is less than 10</h2>
+else if
+	<h3>num is greater than 10</h3>
+	
+</script>
+</body>
+</html>

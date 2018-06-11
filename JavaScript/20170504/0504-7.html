@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// ECMAScript中最长见的一个问题是字符串连接的性能
+
+// StringBuffer类打包字符串连接功能
+function StringBuffer()
+{
+	// _strings_本意是私有属性，变量前后加下划线表示想让_strings_为私有属性
+	this._strings_ = new Array(); 
+}
+
+StringBuffer.prototype.append = function(str) 
+{
+	this._strings_.push(str);
+}
+
+StringBuffer.prototype.toString = function()
+{
+	// 返回真正连接成的字符串
+	return this._strings_.join("");
+}
+
+// 可以用下面的代码测试StringBuffer对此和传统的字符串连接方法的性能
+var d1 = new Date();
+//var str = "";
+//for(var i = 0; i < 50000000; i++)
+//	str += "text";
+var d2 = new Date();
+
+//document.write("Concatenation with plus: "
+//	+ (d2.getTime() - d1.getTime()) + " milliseconds");
+	
+
+var buffer = new StringBuffer();
+//buffer.append("text")
+//buffer.append("text")
+//var res = buffer.toString();
+//alert(res);
+
+d1 = new Date();
+for(var i = 0; i < 50000000; i++)
+	buffer.append("text");
+
+var result = buffer.toString();
+d2 = new Date();
+
+document.write("Concatenation with StringBuffer: "
+	+ (d2.getTime() - d1.getTime()) + " milliseconds");
+
+</script>
+
+</body>
+</html>

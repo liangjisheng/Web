@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 原型方式创建对象，利用了对象的prototype属性，可以把这个属性看成创建
+// 新对象锁依赖的原型
+// 首先定义构造函数，其中无任何代码，接下来，通过Car的prototype属性添加属性
+// 定义Car对象的属性，调用new Car()时，原型的所有属性都被立即赋予要创建的
+// 对象，意味着所有Car实例存放的都是指向showColor()函数的指针
+function Car() {}
+
+Car.prototype.color = "blue";
+Car.prototype.doors = 4;
+Car.prototype.mpg = 25;
+// 函数共享没有问题，若属性指向的是对象，就会共享对象
+Car.prototype.drivers = new Array("Mike", "John");
+Car.prototype.showColor = function() { alert(this.color); }
+
+var oCar1 = new Car();
+var oCar2 = new Car();
+
+//alert(oCar1 instanceof Car);				// true
+
+oCar1.drivers.push("Bill");
+
+// 两个实例指向同一个数组
+alert(oCar1.drivers);					// Mike,John,Bill
+alert(oCar2.drivers);					// Mike,John,Bill
+
+//oCar1.showColor();
+//oCar2.showColor();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!ECMAScript>
+<html>
+<body>
+
+<script>
+
+var iNum = 18;
+//alert(iNum.toString(2));			// 10010
+
+// 负数已补码的形式表示，但ECMAScript 并不以二进制补码的形式显示，
+// 而是用数字绝对值的标准二进制代码前面加负号的形式输出。例如： 
+iNum = -18;
+//alert(iNum.toString(2));			// -10010
+
+// 所有整数字面量都默认存储为有符号整数。
+// 只有 ECMAScript 的位运算符才能创建无符号整数。
+
+iNum = 25;
+//位运算 NOT 实质上是对数字求负，然后减 1，因此 25 变 -26.
+var iNum2 = ~iNum;
+//alert(iNum2);					// -26
+
+var iNum3 = -iNum - 1;
+//alert(iNum3);					// -26
+
+// 有符号的位移运算
+iNum = 2;
+iNum2 = iNum << 5;
+//alert(iNum2);
+
+iNum = -2;
+iNum2 = iNum << 5;
+//alert(iNum2);					// -64
+
+// 无符号右移运算符
+// 转换成无符号的等价形式(尽管该数字本身还是有符号的)
+var iUnsigned64 = -64 >>> 0;
+alert(iUnsigned64.toString(2));				// 补码表示
+
+</script>
+
+</body>
+</html>

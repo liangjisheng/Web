@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<script>
+</script>
+</head>
+
+<body>
+
+<p>调用函数计算，返回结果</p>
+<p id = "demo"></p>
+
+<script>
+
+function myFunc(a, b)
+{ return a * b; }
+
+document.getElementById("demo").innerHTML = myFunc(4, 3);
+
+// 如果把值赋给尚未声明的变量，该变量将被自动作为全局变量声明
+// 即使在函数内执行
+// carname = "Volvo";
+
+</script>
+
+</body>
+
+</html>

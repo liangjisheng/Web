@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+	// ECMAScript的Boolean,数字和字符串的原始值的有趣之处在于他们是伪对象，
+	// 这意味着他们实际上具有属性和方法,都有toString()方法，可以把他们转换
+	// 成字符串,String基本类型也有toString()方法
+	var sColor = "red";
+	//alert(sColor.length);		// 3
+	//alert(sColor.toString());
+	
+	var bFound = false;
+	//alert(bFound.toString());		// false
+	
+	// Number类型的toString()方法有两种模式，默认返回以10进制表示，可以传
+	// 一个参数表示返回的进制数
+	var iNum1 = 10;
+	//Number iNum1 = 10;
+	var iNum2 = 10.0
+	//alert(iNum1.toString());		// 10
+	//alert(iNum2.toString());		// 10
+	
+	var iNum3 = 020;
+	//alert(iNum3.toString());		// 16
+	var iNum4 = 0x20;
+	//alert(iNum4.toString());		// 32
+	
+	//alert(iNum1.toString(2));		// 1010
+	//alert(iNum1.toString(3));		// 101
+	//alert(iNum1.toString(4));		// 22
+	//alert(iNum1.toString(5));		// 20
+	//alert(iNum1.toString(6));		// 14
+	//alert(iNum1.toString(7));		// 13
+	//alert(iNum1.toString(8));		// 12
+	//alert(iNum1.toString(9));		// 11
+	//alert(iNum1.toString(10));	// 10
+	//alert(iNum1.toString(11));	// a
+	//alert(iNum1.toString(12));	// a
+	//alert(iNum1.toString(13));	// a
+	//alert(iNum1.toString(14));	// a
+	//alert(iNum1.toString(15));	// a
+	//alert(iNum1.toString(16));	// a
+	
+	// parseInt()第一个参数只能为字符串，如果为其它类型，则返回NaN
+	//alert(parseInt("12345red"));	// 12345
+	//alert(parseInt("0xa"));			// 10
+	//alert(parseInt("56.9"));		// 56
+	//alert(parseInt("red"));			// NaN
+	
+	// 第二个参数表示以多少进制数进行解析，返回10进制数
+	//alert(parseInt("10", 2));		// 2
+	//alert(parseInt("10", 3));		// 3
+	//alert(parseInt("10", 4));		// 4
+	//alert(parseInt("10", 5));		// 5
+	//alert(parseInt("10", 6));		// 6
+	//alert(parseInt("10", 7));		// 7
+	//alert(parseInt("10", 8));		// 8
+	//alert(parseInt("10", 9));		// 9
+	//alert(parseInt("10", 10));		// 10
+	//alert(parseInt("10", 11));		// 11
+	//alert(parseInt("10", 12));		// 12
+	//alert(parseInt("10", 16));		// 16
+	
+	// 默认以10进制进行解析
+	//alert(parseInt("010"));			// 10
+	//alert(parseInt("010", 8));		// 8
+	//alert(parseInt("010", 10));		// 10
+	
+	// parseFloat(),只有一个参数，且字符串必须以10进制表示
+	//alert(parseFloat("12345red"));		// 12345
+	// 根据不同的浏览器，返回0或NaN
+	//alert(parseFloat("0xa"));
+	//alert(parseFloat("11.2"));			// 11.2
+	// 第二个小数点被认为是无效字符
+	//alert(parseFloat("11.22.33"));		// 11.22
+	// 忽略前导0
+	//alert(parseFloat("0102"));			// 102
+	//alert(parseFloat("red"));				// NaN
+	
+	// 强制类型转换(type casting)
+	alert(Boolean(""));				// false
+	alert(Boolean("hello"));		// true
+	alert(Boolean(50));				// true
+	alert(Boolean(null));			// false
+	alert(Boolean(0));				// false
+</script>
+
+</body>
+</html>

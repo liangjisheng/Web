@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 如果函数无明确的返回值，或调用了没有参数的 return 语句，
+// 那么它真正返回的值是 undefined。
+
+function sayHi(sName, sMessage)
+{
+	alert("hello " + sName + sMessage);
+}
+
+//sayHi("test", "asdf");
+
+function sum(iNum1, iNum2)
+{
+	return iNum1 + iNum2;
+}
+
+var iRet = sum(1, 2);
+//alert(iRet);
+
+// 使用arguments对象，无需明确指出参数名，就能访问他们
+// arguments[0]访问第一个参数，arguments[1]访问第二个参数
+function sayHi_1()
+{
+	if(arguments[0] == "bye")
+		return ;
+	alert(arguments[0]);
+}
+
+function howManyArgs()
+{
+	// 属性length获取参数个数
+	alert(arguments.length);
+}
+
+//howManyArgs("string", 45);
+//howManyArgs();
+//howManyArgs(12);
+
+// 用argumnets对象判断传递给函数的参数个数，即可模拟函数重载
+// 参数个数大于等于3是没有结果
+function doAdd()
+{
+	if(arguments.length == 1)
+		alert(arguments[0] + 5);
+	else if(arguments.length == 2)
+		alert(arguments[0] + arguments[1]);
+}
+
+//doAdd(10);
+//doAdd(1, 2);
+//doAdd(1, 2, 3);
+
+// ECMAScript 的函数实际上是功能完整的对象。
+// Function类可以表示开发者定义的任何函数
+// 用 Function 类直接创建函数的语法如下：
+// var function_name = new function(arg1, arg2, ..., argN, function_body)
+// 最后一个参数是函数体，这些参数必须是字符串
+
+var funcSayHi = new Function("sName", "sMessage", 
+				"alert(\"hello \" + sName + sMessage);");
+
+//funcSayHi("test", " asdf");
+
+// 函数只不过是一种引用类型，他们的行为与用Function类明确创建的函数行为是相同的
+function doAdd20(iNum)
+{
+	alert(iNum + 20);
+}
+
+function doAdd20(iNum)
+{
+	alert(iNum + 10);
+}
+// 第二个函数重载了第一个函数
+//doAdd20(10);					// output 20 ,not 30
+// doAdd20被改成了指向不同对象的指针。函数名只是指向函数对象的引用值，
+// 行为就像其他对象一样。可以使两个变量指向同一个函数
+
+var doAdd10 = new Function("iNum", "alert(iNum + 10);");
+var alsoDoAdd10 = doAdd10;
+//doAdd10(1);						// 11
+//alsoDoAdd10(1);					// 11
+
+// 可以将函数作为参数传递给另一个函数
+function callAnotherFunc(fnFunction, vArgument)
+{
+	fnFunction(vArgument);
+}
+
+//callAnotherFunc(doAdd10, 1);			// 11
+
+// 尽管Function构造函数可以创建函数，但最好不要使用它，因为用它定义函数比
+// 传统方式要慢的多，所有函数都应该看做Function类的实例，不管是预定义还是
+// 自定义的函数
+
+// Function对象的属性
+//alert(doAdd10.length);				// 返回函数期望的参数个数
+//alert(sayHi.length);
+
+// Function对象也与所有对象共享valueOF()方法和toString()方法.这两个方法
+// 都是返回函数的源代码,可以在调试时使用
+document.write(doAdd10.toString()); 
+
+</script>
+
+</body>
+</html>
+

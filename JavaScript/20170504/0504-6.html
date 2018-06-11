@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 混合工厂方式创建对象
+function Car()
+{
+	var oCar = new Object;
+	oCar.color = "blue";
+	oCar.doors = 4;
+	oCar.mpg = 25;
+	oCar.showColor = function() { alert(this.color); }
+	
+	return oCar;
+}
+
+var oCar1 = new Car();
+
+oCar1.showColor();
+
+</script>
+
+</body>
+</html>

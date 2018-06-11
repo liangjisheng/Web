@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+// 工厂方式创建类或对象
+// 对象的属性可以在对象创建后动态定义
+function createCar()
+{
+	var oCar = new Object;
+	oCar.color = "blue";
+	oCar.doors = 4;
+	oCar.mpg = 25;
+	oCar.showColor = function() { alert(this.color); }
+	
+	return oCar;
+}
+
+// 此时创建的两个对象的属性完全相同
+var oCar1 = createCar();
+var oCar2 = createCar();
+//oCar1.showColor();
+//oCar2.showColor();
+
+
+// 可以传递参数给createCar
+function createCar1(sColor, iDoors, iMpg)
+{
+	var oCar = new Object;
+	oCar.color = sColor;
+	oCar.doors = iDoors;
+	oCar.mpg = iMpg;
+	oCar.showColor = function() { alert(this.color); }
+	
+	return oCar;
+}
+
+var oCar3 = createCar1("red", 4, 23);
+var oCar4 = createCar1("blue", 3, 25);
+oCar3.showColor();
+oCar4.showColor();
+
+</script>
+
+</body>
+</html>

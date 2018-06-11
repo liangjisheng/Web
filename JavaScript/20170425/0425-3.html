@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<!ECMAScript>
+
+<html>
+<body>
+
+<script>
+
+var bFalse = false;
+var sRed = "red";
+var iZero = 0;
+var iThreeFourFive = 345;
+var oObject = new Object;
+
+document.write("bFalse的逻辑值是 " + (!!bFalse));
+document.write("sRed的逻辑值是 " + (!!sRed));
+document.write("iZero的逻辑值是 " + (!!iZero));
+document.write("iThreeFourFive的逻辑值是 " + (!!iThreeFourFive));
+document.write("oObject的逻辑值是 " + (!!oObject));
+
+var result = 5 + 5;
+//alert(result);					// 10
+var result2 = 5 + "5";
+//alert(result2);					// "55"
+
+// 将"25"转换为25
+var bResut = "25" < 3;
+//alert(bResut);						// false
+// "a"转化为NaN,任何包含NaN的关系运算符都要返回false;
+bResut = "a" < 3;
+//alert(bResut);						// false
+
+var sNum = "66";
+var iNum = 66;
+// 两个等号会进行类型转换
+//alert(sNum == iNum);					// true
+// 三个等号不会进行类型转换
+//alert(sNum === iNum);					// false
+
+//alert(sNum != iNum);					// false
+//alert(sNum !== iNum);					// true
+
+var i = 15;
+//if(i > 30)
+//	alert("i greater than 30");
+//else if(i < 30)
+//	alert("i lesses than 30");
+//else
+//	alert("i equal 30");
+
+iNum = 0;
+
+outermost:
+for(var i = 0; i < 10; i++)
+{
+	for(var j = 0; j < 10; j++)
+	{
+	// break直接跳到outermost标签处
+		if(i == 5 && j== 5)
+			break outermost;
+		iNum++;
+	}
+}
+alert(iNum);
+
+iNum = 0;
+outermost1:
+for(var i = 0; i < 10; i++)
+{
+	for(var j = 0; j < 10; j++)
+	{
+	// break直接跳到outermost标签处
+		if(i == 5 && j== 5)
+			continue outermost1;
+		iNum++;
+	}
+}
+alert(iNum);
+
+</script>
+
+</body>
+</html>
